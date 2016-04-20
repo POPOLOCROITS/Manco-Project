@@ -201,6 +201,30 @@ footer .contacts ul li{
   }
 /* End - icons*/
 
+/* Separator */
+
+  footer .separator_container{
+    text-align: center;
+  }
+
+  footer .separator_container img{
+    
+  }
+
+/* End - Separator */
+
+/* Copyright */
+
+  footer .copy_container{
+    text-align: center;
+  }
+
+  footer .copy_container span{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+/* End - Copyright */
+
 /**************(  End - Footer  )**************/
 
 /**************(  Parallax  )**************/
