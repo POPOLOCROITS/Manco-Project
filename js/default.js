@@ -51,13 +51,39 @@ $(document).ready(function(){
 	carousel_silver( $("#example-1") );
 	carousel_silver( $("#example-2") )
 
-	// var banner = $("#mjx3_banner")
-	// var hammerTime = new Hammer(banner);
-
-	// hammerTime.on('pan', function(ev){
-	// 	console.log("something...");
-	// });
-	
+	$('#new_sesion').click(function(){
+        
+        setTimeout(function(){
+            if ( $('#login_username').val() != "" && $('#login_userpass').val() != "" ){
+            
+                $.ajax({
+                    type: 'POST',
+                    url: 'log.inout.ajax.php',
+                    data: 'login_username=' + $('#login_username').val() + '&login_userpass=' + $('#login_userpass').val(),
+                    success:function(msj){
+                        if ( msj == 1 ){
+                            console.log("Cargando...");
+                        }
+                        else{
+                           console.log("Sesión iniciada.");
+                        }
+                        $('#timer').fadeOut(300);
+                    },
+                    error:function(){
+                        console.log("Falló el Inicio.");
+                    }
+                });        
+            }
+            else{
+                $('#alertBoxes').html('<div class="box-error"></div>');
+                $('.box-error').hide(0).html('Los campos estan vacios');
+                $('.box-error').slideDown(timeSlide);
+                $('#timer').fadeOut(300);
+            }
+        },timeSlide);
+        
+        return false;  
+    });	
 });
 
 function carousel_silver(example){

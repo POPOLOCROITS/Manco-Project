@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,12 +53,21 @@
 
 	<!-- NAVBAR -->
 	<ul id="dropdown1" class="dropdown-content">
-  		<li><a href="#!">Mi cuenta</a></li>
-  		<li><a href="#!">Mis pedidos<span class="badge">5</span></a></li>
-  		<li><a href="#!">Mis recomendaciones</a></li>
-  		<li><a href="#!">Configuración</a></li>
-  		<li class="divider"></li>
-  		<li><a href="#!">Cerrar Sesión</a></li>
+		<?php
+			if ( isset($_SESSION['username']) && isset($_SESSION['userid']) && $_SESSION['username'] != '' && $_SESSION['userid'] != '0' ){
+				echo '	<!-- <li><a href="#!">Mi cuenta</a></li>
+  						<li><a href="#!">Mis pedidos<span class="badge">5</span></a></li>
+  						<li><a href="#!">Mis recomendaciones</a></li>
+  						<li><a href="#!">Configuración</a></li>
+  						<li class="divider"></li>
+  						<li><a href="#!">Cerrar Sesión</a></li>';
+			}
+			else{
+				echo '	<li><a href="#!" class="new_sesion" id="new_sesion">Iniciar Sesión</a></li>
+  						<li class="divider"></li>
+  						<li><a href="login.php" class="new_sesion" id="new_sesion">Registrate!</a></li>';
+			}
+		?> 		
 	</ul>
 	<nav>
 	  	<div class="nav-wrapper">
@@ -75,6 +86,7 @@
 				    </div>
 			    </li>
 			    <li>
+			    	<!-- <a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">Mi cuenta<i class="material-icons right">arrow_drop_down</i></a> -->
 			    	<a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">Mi cuenta<i class="material-icons right">arrow_drop_down</i></a>
 			    </li>
 			    <li>
