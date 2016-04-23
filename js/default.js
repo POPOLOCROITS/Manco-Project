@@ -51,39 +51,43 @@ $(document).ready(function(){
 	carousel_silver( $("#example-1") );
 	carousel_silver( $("#example-2") )
 
-	$('#new_sesion').click(function(){
+	// $('#new_sesion').click(function(){
         
-        setTimeout(function(){
-            if ( $('#login_username').val() != "" && $('#login_userpass').val() != "" ){
+ //        setTimeout(function(){
+ //            if ( $('#login_username').val() != "" && $('#login_userpass').val() != "" ){
             
-                $.ajax({
-                    type: 'POST',
-                    url: 'log.inout.ajax.php',
-                    data: 'login_username=' + $('#login_username').val() + '&login_userpass=' + $('#login_userpass').val(),
-                    success:function(msj){
-                        if ( msj == 1 ){
-                            console.log("Cargando...");
-                        }
-                        else{
-                           console.log("Sesión iniciada.");
-                        }
-                        $('#timer').fadeOut(300);
-                    },
-                    error:function(){
-                        console.log("Falló el Inicio.");
-                    }
-                });        
-            }
-            else{
-                $('#alertBoxes').html('<div class="box-error"></div>');
-                $('.box-error').hide(0).html('Los campos estan vacios');
-                $('.box-error').slideDown(timeSlide);
-                $('#timer').fadeOut(300);
-            }
-        },timeSlide);
+ //                $.ajax({
+ //                    type: 'POST',
+ //                    url: 'log.inout.ajax.php',
+ //                    data: 'login_username=' + $('#login_username').val() + '&login_userpass=' + $('#login_userpass').val(),
+ //                    success:function(msj){
+ //                        if ( msj == 1 ){
+ //                            console.log("Cargando...");
+ //                        }
+ //                        else{
+ //                           console.log("Sesión iniciada.");
+ //                        }
+ //                        $('#timer').fadeOut(300);
+ //                    },
+ //                    error:function(){
+ //                        console.log("Falló el Inicio.");
+ //                    }
+ //                });        
+ //            }
+ //            else{
+ //                $('#alertBoxes').html('<div class="box-error"></div>');
+ //                $('.box-error').hide(0).html('Los campos estan vacios');
+ //                $('.box-error').slideDown(timeSlide);
+ //                $('#timer').fadeOut(300);
+ //            }
+ //        },timeSlide);
         
-        return false;  
-    });	
+ //        return false;  
+ //    });
+
+    $("#kill_session").on("click",function(){
+        session_killer();
+    });
 });
 
 function carousel_silver(example){
@@ -153,4 +157,22 @@ function scrollFooter(scrollY, heightFooter)
 
 function margin_navbar(nav){
 	console.log( $(nav).css("height") );
+}
+
+function session_killer(){
+    setTimeout(function(){
+        window.location.href = "login/logout.php";
+    },2500);
+
+    $.ajax({
+        type:"POST",
+        data:{identification:2},
+        url:"login/default.php",
+        success:function(){
+            window.location = "index.php";
+        },
+        error:function(){
+            console.log("something went wrong :(");
+        }
+    })
 }

@@ -43,12 +43,12 @@
 				<div class="row">
 				    <div class="col s12">
 				      	<ul class="tabs">
-					        <li class="tab col s3"><a href="#login_mj">Regístrate</a></li>
-					        <li class="tab col s3"><a href="#registration_mj">Iniciar Sesión</a></li>
+					        <li class="tab col s3" id="regis"><a href="#registration_mj">Regístrate</a></li>
+					        <li class="tab col s3" id="login"><a href="#login_mj">Iniciar Sesión</a></li>
 				      	</ul>
 				    </div>
 				</div>
-				<div id="login_mj">
+				<div id="registration_mj">
 					<form class="col s12">
 				    	<div class="row">
 					        <div class="input-field col s12">
@@ -93,7 +93,7 @@
 		      			<button class="btn waves-effect waves-light" id="submit_reg">Regístrate</button>
 			      	</div>
 				</div>
-				<div id="registration_mj">
+				<div id="login_mj">
 					<form class="col s12">
 						<div class="row">
 							<div class="input-field col s12">
@@ -107,11 +107,11 @@
 					          	<label for="password">Contraseña</label>
 					        </div>
 				      	</div>
-				      	<div class="row submit_container">		      		
-			      			<button class="btn waves-effect waves-light" type="submit" name="action">Iniciar Sesión
-							</button>
-				      	</div>
 					</form>
+					<div class="row submit_container">		      		
+		      			<button class="btn waves-effect waves-light" id="submit_log">Iniciar Sesión
+						</button>
+			      	</div>
 				</div>    
 		    </div>
 	  	</div>
