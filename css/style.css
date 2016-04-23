@@ -48,6 +48,14 @@ nav li .mjx3_cart_counter{
     padding: 8px 5px 0 5px;
 }
 
+nav li form{
+    height: 100%;
+}
+
+nav li form #search{
+    height: auto;
+}
+
 .input-field input[type=search]:focus{
 	background-color: #C8B4D8;
 }

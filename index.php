@@ -85,9 +85,18 @@
 					    </form>
 				    </div>
 			    </li>
+			    <li><a class="waves-effect waves-light btn">Productos</a></li>
 			    <li>
 			    	<!-- <a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">Mi cuenta<i class="material-icons right">arrow_drop_down</i></a> -->
-			    	<a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">Mi cuenta<i class="material-icons right">arrow_drop_down</i></a>
+			    	<a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">
+			    		<?php if($_SESSION){
+			    				echo $_SESSION["username"];
+			    			}else{
+			    				echo "Mi cuenta";
+			    			}
+			    		?>
+			    		<i class="material-icons right">arrow_drop_down</i>
+			    	</a>
 			    </li>
 			    <li>
 			      	<a href="!#" class="mjx3_cart">
