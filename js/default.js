@@ -44,6 +44,8 @@ $(window).load(function(){
 
 $(document).ready(function(){
 
+    $.ajax({cache:false});
+
 	$(".dropdown-button").dropdown();
 
 	$('.slider').slider({full_width: true});
@@ -51,42 +53,18 @@ $(document).ready(function(){
 	carousel_silver( $("#example-1") );
 	carousel_silver( $("#example-2") )
 
-	// $('#new_sesion').click(function(){
-        
- //        setTimeout(function(){
- //            if ( $('#login_username').val() != "" && $('#login_userpass').val() != "" ){
-            
- //                $.ajax({
- //                    type: 'POST',
- //                    url: 'log.inout.ajax.php',
- //                    data: 'login_username=' + $('#login_username').val() + '&login_userpass=' + $('#login_userpass').val(),
- //                    success:function(msj){
- //                        if ( msj == 1 ){
- //                            console.log("Cargando...");
- //                        }
- //                        else{
- //                           console.log("Sesión iniciada.");
- //                        }
- //                        $('#timer').fadeOut(300);
- //                    },
- //                    error:function(){
- //                        console.log("Falló el Inicio.");
- //                    }
- //                });        
- //            }
- //            else{
- //                $('#alertBoxes').html('<div class="box-error"></div>');
- //                $('.box-error').hide(0).html('Los campos estan vacios');
- //                $('.box-error').slideDown(timeSlide);
- //                $('#timer').fadeOut(300);
- //            }
- //        },timeSlide);
-        
- //        return false;  
- //    });
-
     $("#kill_session").on("click",function(){
         session_killer();
+    });
+
+    $("#products").on("click",function(){
+        if($(this).hasClass("action")){
+             show_products($(this), true);
+            $(this).removeClass("action");
+        }else{
+            show_products($(this), false);
+            $(this).addClass("action");
+        }
     });
 });
 
@@ -136,10 +114,7 @@ function carousel_silver(example){
   	track.start();
 }
 
-function scrollFooter(scrollY, heightFooter)
-{
-    console.log(scrollY);
-    console.log(heightFooter);
+function scrollFooter(scrollY, heightFooter){
 
     if(scrollY >= heightFooter)
     {
@@ -175,4 +150,103 @@ function session_killer(){
             console.log("something went wrong :(");
         }
     })
+}
+
+function show_products(object, in_out){
+    
+    var btn_text = "";
+    var windowHeight = $("#mjx3_banner").height() + 20;
+
+    $(window).scrollTop(0);
+
+    if(in_out){
+        btn_text = "Regresar";
+        var heightDocument = (windowHeight) + ($('.content').height()) - ($('footer').height()/3);
+
+        $(".wrapper-parallax").animate({
+            // "margin-top": '0px'
+            "margin-top": $("nav").height() + 'px'
+        },300);
+        if($("section").find(".mjx_products_container").length == 0){
+            build_product_list();
+        }else{
+            $("section").find(".mjx_products_container").fadeIn(300);
+        }
+        
+    }else{
+        btn_text = "Productos";
+        var heightDocument = (windowHeight) + ($('.content').height()) + ($('footer').height());
+
+        $(".wrapper-parallax").animate({
+            "margin-top": windowHeight + 'px'
+        },300);
+        $("section").find(".mjx_products_container").fadeOut(300);
+    }
+
+    $(object).find("div").animate({
+            width:"toggle"
+    },300,function(){
+        $("#products").find("div").html(btn_text);         
+    });
+
+    $(object).find("div").animate({
+        width:"toggle"
+    },300);
+
+    $("header").find("#mjx3_banner").animate({
+        height: "toggle"
+    },300, function(){
+        
+    });  
+   
+    $('#scroll-animate').css({
+        'height' :  heightDocument + 'px'
+    });
+}
+
+function build_product_list(){
+
+    var data = {identification:4};
+
+    $.ajax({
+        type:"POST",
+        data: data,
+        url: "login/default.php",
+        success:function(data){
+            var obj = jQuery.parseJSON(data);
+            console.log(obj);
+        },
+        error:function(){
+            console.log("My Teemo!1!");
+        }
+    })
+
+    var products_container = $("<div>",{class:"mjx_products_container"});       
+        var row_container = $("<div>",{class:"row"});
+            
+            var inmediat_container1 = $("<div>",{class:"col-md-2 separator"});
+                var my_div1 = $("<div>",{class:"container_p row"});
+                    var prot_img1 = $("<img>",{class:"prot img-responsive", src:"http://schoolido.lu/static/idols/chibi/Kousaka_Honoka.png"});                    
+                    var my_inf_cont = $("<div>",{class:"info_cont"});
+                        var my_div_name = $("<div>",{class:"row"});
+                            var my_h5_name = $("<h6>",{class:"col-md-12 my_content", html:"Kousaka Honoka"});
+                        my_div_name.append(my_h5_name);     
+                    my_inf_cont.append(my_div_name); 
+                my_div1.append(prot_img1,my_inf_cont);
+            inmediat_container1.append(my_div1);
+            
+            var inmediat_container2 = $("<div>",{class:"col-md-2"});
+                var prot_img2 = $("<img>",{class:"prot", src:"http://schoolido.lu/static/idols/chibi/Hoshizora_Rin.png"});
+            inmediat_container2.append(prot_img2);    
+            var inmediat_container3 = $("<div>",{class:"col-md-2"});
+                var prot_img3 = $("<img>",{class:"prot", src:"http://schoolido.lu/static/idols/chibi/Yazawa_Nico.png"});
+            inmediat_container3.append(prot_img3);
+            var inmediat_container4 = $("<div>",{class:"col-md-2"});
+                var prot_img4 = $("<img>",{class:"prot", src:"http://schoolido.lu/static/idols/chibi/Koizumi_Hanayo.png"});
+            inmediat_container4.append(prot_img4);   
+        row_container.append(inmediat_container1,inmediat_container2,inmediat_container3,inmediat_container4); 
+    products_container.append(row_container);
+
+    $("section").append(products_container);
+
 }

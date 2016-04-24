@@ -59,11 +59,11 @@
 				      	<div class="row">
 					        <div class="input-field col s6">
 					          	<input id="first_name" type="text" class="validate" name="first">
-					          	<label for="first_name">First Name</label>
+					          	<label for="first_name">Nombre</label>
 					        </div>
 					        <div class="input-field col s6">
 					          	<input id="last_name" type="text" class="validate" name="last">
-					          	<label for="last_name">Last Name</label>
+					          	<label for="last_name">Apellido</label>
 					        </div>
 				      	</div>
 				      	<div class="row">

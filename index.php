@@ -8,7 +8,7 @@
 	<!-- Configuración UTF-8 -->
 	<meta charset="utf-8">
 
-	<!-- Mobile Version -->
+	<!-- Mobile Version Bootstrap-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 	<!-- jQuery -->
@@ -85,7 +85,7 @@
 					    </form>
 				    </div>
 			    </li>
-			    <li><a class="waves-effect waves-light btn">Productos</a></li>
+			    <li><a class="waves-effect waves-light btn action" id="products"><div>Productos</div></a></li>
 			    <li>
 			    	<!-- <a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">Mi cuenta<i class="material-icons right">arrow_drop_down</i></a> -->
 			    	<a class="mjx3_account dropdown-button" href="#!" data-activates="dropdown1">
@@ -113,14 +113,14 @@
 		<div class="slider" id="mjx3_banner">
 		    <ul class="slides">
 		      	<li>
-			        <img src="images/banner_pic_1.jpg"> <!-- random image -->
+			        <img src="images/banner_pic_1.jpg">
 			        <div class="caption left-align">
 			          	<h3>Venom Snake</h3>
 			          	<h5 class="light grey-text text-lighten-3">Ya disponible</h5>
 			        </div>
 		      	</li>
 		      	<li>
-			        <img src="images/banner_pic_2.jpg"> <!-- random image -->
+			        <img src="images/banner_pic_2.jpg">
 			        <div class="caption left-align">
 			          	<h3>Descuentos del 20%</h3>
 			          	<h5 class="light grey-text text-lighten-3 mjx3_subtile">En sección de Anime</h5>
@@ -136,111 +136,7 @@
     		<div class="wrapper-parallax">
 			  	<section class="content">
 
-				  	<!-- Carrusel 1 -->
-				  	<!-- <div class="track example-5">
-					    <div class="inner">
-					     	<h2>Articulos que podrían interesarte</h2>
-
-					      	<div class="view-port">
-						        <div id="example-1" class="slider-container">
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/60044632?size=220x124">
-							            <p>Trailer 1</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib2.huluim.com/video/60063785?size=220x124">
-							            <p>Trailer 2</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib2.huluim.com/video/60062745?size=220x124">
-							            <p>Trailer 3</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/40050156?size=220x124">
-							            <p>Trailer 4</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/60066740?size=220x124">
-							            <p>Trailer 5</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib4.huluim.com/video/60062747?size=220x124">
-							            <p>Trailer 6</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib3.huluim.com/video/60062746?size=220x124">
-							            <p>Trailer 7</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/60062744?size=220x124">
-							            <p>Trailer 8</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib2.huluim.com/video/60060717?size=220x124">
-							            <p>Trailer 9</p>
-						          	</div>
-						        </div>
-					      	</div>
-					    </div>
-
-					    <div class="pagination">
-					      <a href="#" class="prev disabled material-icons">chevron_left</a>
-					      <a href="#" class="next disabled material-icons">chevron_right</a>
-					    </div>
-					</div>
-
-					Carrusel 2
-				  	<div class="track example-5">
-					    <div class="inner">
-					     	<h2>Articulos que podrían interesarte</h2>
-
-					      	<div class="view-port">
-						        <div id="example-2" class="slider-container">
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/60044632?size=220x124">
-							            <p>Trailer 1</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib2.huluim.com/video/60063785?size=220x124">
-							            <p>Trailer 2</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib2.huluim.com/video/60062745?size=220x124">
-							            <p>Trailer 3</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/40050156?size=220x124">
-							            <p>Trailer 4</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/60066740?size=220x124">
-							            <p>Trailer 5</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib4.huluim.com/video/60062747?size=220x124">
-							            <p>Trailer 6</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib3.huluim.com/video/60062746?size=220x124">
-							            <p>Trailer 7</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib1.huluim.com/video/60062744?size=220x124">
-							            <p>Trailer 8</p>
-						          	</div>
-						          	<div class="item">
-							            <img src="http://ib2.huluim.com/video/60060717?size=220x124">
-							            <p>Trailer 9</p>
-						          	</div>
-						        </div>
-					      	</div>
-					    </div>
-
-					    <div class="pagination">
-					      <a href="#" class="prev disabled material-icons">chevron_left</a>
-					      <a href="#" class="next disabled material-icons">chevron_right</a>
-					    </div>
-					</div> -->
+				  	
 				</section>
 
 				<footer>
