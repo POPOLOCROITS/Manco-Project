@@ -63,9 +63,9 @@
   						<li><a href="#!" id="kill_session">Cerrar Sesión</a></li>';
 			}
 			else{
-				echo '	<li><a href="login.php?tab=2" class="new_sesion" id="new_sesion">Iniciar Sesión</a></li>
+				echo '	<li><a href="views/login.php?tab=2" class="new_sesion" id="new_sesion">Iniciar Sesión</a></li>
   						<li class="divider"></li>
-  						<li><a href="login.php?tab=1" class="new_sesion" id="new_sesion">Registrate!</a></li>';
+  						<li><a href="views/login.php?tab=1" class="new_sesion" id="new_sesion">Registrate!</a></li>';
 			}
 		?> 		
 	</ul>
@@ -135,7 +135,22 @@
   		<div id="scroll-animate-main">
     		<div class="wrapper-parallax">
 			  	<section class="content">
-
+			  	
+				  	<div class="preloader_container">
+				  		<div class="preloader_subcontainer">
+				  			<div class="preloader-wrapper big active">
+							    <div class="spinner-layer spinner-blue-only">
+								    <div class="circle-clipper left">
+								        <div class="circle"></div>
+								    </div><div class="gap-patch">
+								        <div class="circle"></div>
+								    </div><div class="circle-clipper right">
+								        <div class="circle"></div>
+								    </div>
+							    </div>
+							</div>
+				  		</div>
+				  	</div>
 				  	
 				</section>
 
@@ -147,17 +162,17 @@
 			        	<div class="contacts_content">
 			        		<ul class="center-align">
 					        	<li>
-					        		<a class="btn-floating btn-large waves-effect waves-light icon-instagram" href="">
+					        		<a class="btn-floating btn-large waves-effect waves-light icon-instagram" href="https://www.instagram.com/" target="_blank">
 					        			<img src="img/instr_2.png">
 					        		</a>
 					        	</li>
 					        	<li>
-					        		<a class="btn-floating btn-large waves-effect waves-light icon-facebook" href="">
+					        		<a class="btn-floating btn-large waves-effect waves-light icon-facebook" href="https://www.facebook.com/" target="_blank">
 					        			<img src="img/faceb_2.png">
 					        		</a>
 					        	</li>		
 					        	<li>
-					        		<a class="btn-floating btn-large waves-effect waves-light icon-twitter" href="">
+					        		<a class="btn-floating btn-large waves-effect waves-light icon-twitter" href="https://twitter.com/" target="_blank">
 					        			<img src="img/twitt_2.png">
 					        		</a>
 					        	</li>
@@ -177,7 +192,7 @@
 	</div>		
 
 	<!-- PRELOADER -->
-  	<div class="preloader-wrapper big active">
+  	<!-- <div class="preloader-wrapper big active">
 	    <div class="spinner-layer spinner-blue-only">
 		    <div class="circle-clipper left">
 		        <div class="circle"></div>
@@ -187,7 +202,7 @@
 		        <div class="circle"></div>
 		    </div>
 	    </div>
-	</div>
+	</div> -->
 
 </body>
 </html>

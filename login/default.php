@@ -78,7 +78,7 @@
 			
 			$db = conectar();
 			
-			$sql = "SELECT name, url from products";
+			$sql = "SELECT name, url, id from products";
 
 			$valores = array();
 

@@ -363,6 +363,18 @@ footer,
 
 section .mjx_products_container{
     margin:20px;
+    display: none;
+}
+
+section .preloader_container{
+    text-align: center;
+    height: 100%;
+    display: none;
+}
+
+section .preloader_subcontainer{
+    display: inline-block;
+    margin-top: auto;
 }
 
 section .mjx_products_container .container_p .info_cont .row{

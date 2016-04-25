@@ -5,17 +5,17 @@
 	<head>
 
 		<!-- jQuery -->
-		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="../js/jquery.js"></script>
 		
 		<!-- Materialize -->
-		<script type="text/javascript" src="js/materialize.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/materialize.css">
+		<script type="text/javascript" src="../js/materialize.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/materialize.css">
 
 	  	<!-- My CSS -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 		<!-- My JavaScript -->
-		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="../js/login.js"></script>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>MJX3 - Login</title>
