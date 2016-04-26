@@ -24,19 +24,6 @@
 	<!-- Iconos -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<!-- Silver Track -->
-	<link rel="stylesheet" href="css/style_silver_track.css" type="text/css" media="screen" charset="utf-8">
-  	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen" charset="utf-8">
-	<script type="text/javascript" src="js/silver_track/modernizr.mediaqueries.transforms3d.js"></script>
-	<script type="text/javascript" src="js/silver_track/responsive-hub.js"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.js" charset="utf-8"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.navigator.js" charset="utf-8"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.bullet_navigator.js" charset="utf-8"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.remote_content.js" charset="utf-8"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.responsive_hub_connector.js" charset="utf-8"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.css3_animation.js" charset="utf-8"></script>
-  	<script type="text/javascript" src="js/silver_track/jquery.silver_track.circular_navigator.js" charset="utf-8"></script>
-
   	<!-- Materialize -->
 	<script type="text/javascript" src="js/materialize.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/materialize.css">
