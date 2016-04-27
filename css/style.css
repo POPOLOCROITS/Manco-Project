@@ -522,3 +522,85 @@ section .mjx_products_container .container_p .info_cont .row .my_content{
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////(   Individual - End    )///////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////(   Cart    )/////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.cart_container{
+    padding: 20px;
+}
+
+.cart_container .title_container{
+
+}
+
+.cart_container .row_product_container{
+    height: 150px;
+}
+
+.cart_container .row_product_container .row_product{
+    background-color: #775494;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+    height: 100%;
+    padding: 15px;
+}
+
+.cart_container .row_product_container .row_product img{
+   height: 100%;
+   border-radius: 100%;
+}    
+
+.cart_container .row_product_container .row_info{
+    background-color: white;
+    height: 100%;
+}
+
+.cart_container .row_product_container .row_info h5{
+    color: #BD4470;
+}
+
+.cart_container .row_product_container .row_info p{
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+.cart_container .row_product_container .row_info .product_price{
+    width: 100%;
+}
+
+.cart_container .row_product_container .row_info .product_price div{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin: 0 15px 10px 0;
+     padding: 5px;
+    background-color: #F5EBFF;
+    border-radius: 5px;
+}
+
+.cart_container .row_product_container .row_plus{
+    background-color: red;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    text-align: center;
+}
+
+.fixed-action-btn{
+    position: absolute;
+}
+
+.btn_delete{
+    height: 100%;
+}
+
+.btn_delete a{
+    margin-top: 30%;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////(   Cart - End    )//////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

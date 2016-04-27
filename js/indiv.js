@@ -8,17 +8,18 @@ $(document).ready(function(){
 		success:function(data){
 			obj = $.parseJSON(data);
 
-			$.each(obj,function(index,value){
+			// console.log(obj);			
 
-				$("head").find("title").html(obj.name);
-				$(".title_container").find("h3").html(obj.name);
-				$(".title_container").find("h5").html(obj.serie);
+			$("head").find("title").html(obj.name);
+			$(".title_container").find("h3").html(obj.name);
+			$(".title_container").find("h5").html(obj.serie);
 
-				$(".desc_container").find("p").html(obj.description);
+			$(".desc_container").find("p").html(obj.description);
 
-				$(".details_container").find(".name_container").html(obj.data);
+			$(".details_container").find(".name_container").html(obj.data);
 
-			});
+			$(".images_container").html(obj.images);
+
 		},
 		error:function(xhr, status, error){
 			var err = eval("(" + xhr.responseText + ")");

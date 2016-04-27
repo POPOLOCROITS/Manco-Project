@@ -48,15 +48,7 @@
 			</div>
 		</div>
 		<div class="visual_container">
-			<div class="images_container">
-				<a class="fancybox-thumbs" data-fancybox-group="thumb" href="http://images.goodsmile.info/cgm/images/product/20151208/5393/36840/large/7a51019eca5d98715ae78e718e431728.jpg"><img src="http://images.goodsmile.info/cgm/images/product/20151208/5393/36840/large/7a51019eca5d98715ae78e718e431728.jpg" alt="" /></a>
-
-				<a class="fancybox-thumbs" data-fancybox-group="thumb" href="http://images.goodsmile.info/cgm/images/product/20151208/5393/36841/large/86ee32c7a964f2e939bb54fa9367fd3b.jpg"><img src="http://images.goodsmile.info/cgm/images/product/20151208/5393/36841/large/86ee32c7a964f2e939bb54fa9367fd3b.jpg" alt="" /></a>
-
-				<a class="fancybox-thumbs" data-fancybox-group="thumb" href="http://images.goodsmile.info/cgm/images/product/20151208/5393/36842/large/ed07c6b18304a7283386b6b98c24392f.jpg"><img src="http://images.goodsmile.info/cgm/images/product/20151208/5393/36842/large/ed07c6b18304a7283386b6b98c24392f.jpg" alt="" /></a>
-
-				<a class="fancybox-thumbs" data-fancybox-group="thumb" href="http://images.goodsmile.info/cgm/images/product/20151208/5393/36844/large/34241ea1fc26aca159327f9ce190e15c.jpg"><img src="http://images.goodsmile.info/cgm/images/product/20151208/5393/36844/large/34241ea1fc26aca159327f9ce190e15c.jpg" alt="" /></a>
-			</div>
+			<div class="images_container"></div>
 			<div class="preloader_container">
 		  		<div class="preloader_subcontainer">
 		  			<div class="preloader-wrapper big active">

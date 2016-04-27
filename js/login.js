@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 			$.ajax({
 				type:"POST",
-				url:"login/default.php",
+				url:"../login/default.php",
 				data:data,
 				success:function(respond){
 					console.log(respond);
@@ -67,11 +67,11 @@ $(document).ready(function(){
 
 				$.ajax({
 					type: 'POST',
-					url: 'login/default.php',
+					url: '../login/default.php',
 					data: data,
 					success:function(data){
 						// console.log(data)
-						window.location = "index.php";
+						window.location = "../index.php";
 					},
 					error:function(){
 						console.log("Something went wrong");

@@ -18,7 +18,7 @@
 				if(!$result){
 					echo "Something went wrong :(";
 				}else{
-					$sql = 'SELECT user,passwd,id FROM ajaxusers WHERE user="' . $_POST['username']. '" && passwd="' . md5($_POST['pass']) . '" LIMIT 1';
+					$sql = 'SELECT user,passwd,id,cart FROM ajaxusers WHERE user="' . $_POST['username']. '" && passwd="' . md5($_POST['pass']) . '" LIMIT 1';
 					if ( @$res = @mysql_query($sql) ){
 						if ( @mysql_num_rows($res) == 1 ){
 							
@@ -26,6 +26,7 @@
 							
 							$_SESSION['username']	= $user['user'];
 							$_SESSION['userid']	= $user['id'];
+							$_SESSION['cart'] = $user['cart'];
 							echo 1;
 							
 						}
@@ -47,14 +48,15 @@
 				
 				if ( @mysql_select_db('ajaxtests',$idcnx) ){
 					
-					$sql = 'SELECT user,passwd,id FROM ajaxusers WHERE user="' . $_POST['username']. '" && passwd="' . md5($_POST['pass']) . '" LIMIT 1';
+					$sql = 'SELECT user,passwd,id,cart FROM ajaxusers WHERE user="' . $_POST['username']. '" && passwd="' . md5($_POST['pass']) . '" LIMIT 1';
 					if ( @$res = @mysql_query($sql) ){
 						if ( @mysql_num_rows($res) == 1 ){
 							
 							$user = @mysql_fetch_array($res);							
 
 							$_SESSION['username']	= $user['user'];
-							$_SESSION['userid']	= $user['id'];						
+							$_SESSION['userid']	= $user['id'];
+							$_SESSION['cart'] = $user['cart'];						
 						}
 						else
 							echo "fourth 0";

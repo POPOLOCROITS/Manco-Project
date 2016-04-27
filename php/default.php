@@ -6,30 +6,49 @@
 		mysql_connect("localhost", "root", "") or die("No se pudo conectar: " . mysql_error());
 		mysql_select_db("ajaxtests");
 
-		$resultado = mysql_query("SELECT * from products WHERE id=".$_POST["id"]);
+
+		// "SELECT p.*, pi.url_photo, pi.url_thumbnail FROM products AS p, products_images As pi WHERE p.id=".$_POST["id"]." AND pi.product_id=".$_POST["id"]
+		$counter = 0;
+
+		$resultado = mysql_query(
+					"SELECT p.*, pi.url_thumbnail, pi.url_photo FROM products AS p, products_images AS pi WHERE p.id=".$_POST["id"]." AND pi.product_id=".$_POST["id"]
+				);
 		$valores = array();
 		$return = "";
+		$obj_images = "";
 
-		while ($fila = mysql_fetch_array($resultado, MYSQL_NUM)) {
-		    
+		while ($fila = mysql_fetch_array($resultado, MYSQL_ASSOC)) {
 
-		    $valores["name"] = 			$fila[1];
-		    $valores["serie"] = 		$fila[2];
-		    $valores["description"] = 	$fila[6];
+		    $valores["name"] = 			$fila["name"];
+		    $valores["serie"] = 		$fila["serie"];
+		    $valores["description"] = 	$fila["description"];
 
-		    if(!$fila[7]==""){$return.="<dt>Nombre del Producto<dd>".$fila[7];}else{$return.="";}
-		    if(!$fila[8]==""){$return.="<dt>Serie<dd>".$fila[8];}else{$return.="";}
-		    if(!$fila[9]==""){$return.="<dt>Fabricante<dd>".$fila[9];}else{$return.="";}
-		    if(!$fila[10]==""){$return.="<dt>Categoría<dd>".$fila[10];}else{$return.="";}
-		    if(!$fila[11]==""){$return.="<dt>Precio<dd>$".$fila[11];}else{$return.="";}
-		    if(!$fila[12]==""){$return.="<dt>Fecha de Salida<dd>".$fila[12];}else{$return.="";}
-		    if(!$fila[3]==""){$return.="<dt>Altura Aproximada<dd>".$fila[3]."cm";}else{$return.="";}
-		    if(!$fila[13]==""){$return.="<dt>Escultor<dd>".$fila[13];}else{$return.="";}
-		    if(!$fila[14]==""){$return.="<dt>Cooperativa<dd>".$fila[14];}else{$return.="";}
-		    if(!$fila[15]==""){$return.="<dt>Lanzada por<dd>".$fila[15];}else{$return.="";}
+		    $obj_images .= '
+		    	<a class="fancybox-thumbs" data-fancybox-group="thumb" href="'.$fila["url_thumbnail"].'">
+		    		<img src="'.$fila["url_photo"].'">
+		    	</a>
+			';
+
+		    if($counter == 0){
+		    	if(!$fila["product_name"]==""){$return.="<dt>Nombre del Producto<dd>".$fila["product_name"];}else{$return.="";}
+			    if(!$fila["series_product"]==""){$return.="<dt>Serie<dd>".$fila["series_product"];}else{$return.="";}
+			    if(!$fila["manufacturer"]==""){$return.="<dt>Fabricante<dd>".$fila["manufacturer"];}else{$return.="";}
+			    if(!$fila["category"]==""){$return.="<dt>Categoría<dd>".$fila["category"];}else{$return.="";}
+			    if(!$fila["price"]==""){$return.="<dt>Precio<dd>$".$fila["price"];}else{$return.="";}
+			    if(!$fila["date_rel"]==""){$return.="<dt>Fecha de Salida<dd>".$fila["date_rel"];}else{$return.="";}
+			    if(!$fila["height"]==""){$return.="<dt>Altura Aproximada<dd>".$fila["height"]."cm";}else{$return.="";}
+			    if(!$fila["sculptor"]==""){$return.="<dt>Escultor<dd>".$fila["sculptor"];}else{$return.="";}
+			    if(!$fila["cooperation"]==""){$return.="<dt>Cooperativa<dd>".$fila["cooperation"];}else{$return.="";}
+			    if(!$fila["relesed_by"]==""){$return.="<dt>Lanzada por<dd>".$fila["relesed_by"];}else{$return.="";}
+			    if(!$fila["distributed_by"]==""){$return.="<dt>Lanzada por<dd>".$fila["distributed_by"];}else{$return.="";}
+			    $counter++;
+		    }  
 		}
 
+		// print_r($valores);
+
 		$valores["data"] = $return;
+		$valores["images"] = $obj_images;
 		$to_page = json_encode($valores);
 		echo $to_page;
 

@@ -86,10 +86,20 @@
 			    	</a>
 			    </li>
 			    <li>
-			      	<a href="!#" class="mjx3_cart">
+			      	<a href="views/cart.php" class="mjx3_cart">
 			      		<i class="large material-icons">shopping_cart</i>
 			      	</a>
-			      	<span class="mjx3_cart_counter">3</span>
+			      	<?php
+			      		if($_SESSION){
+			      			if($_SESSION["cart"]==0){
+			      				echo '';
+			      			}else{
+			      				echo '<span class="mjx3_cart_counter">'.$_SESSION["cart"].'</span>';
+			      			}			      			
+			      		}else{
+			      			echo '';
+			      		}
+			      	?>
 			    </li>
 		    </ul>
 	  	</div>
