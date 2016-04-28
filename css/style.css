@@ -20,6 +20,7 @@ nav{
 	background-color: #775494;
 	position: fixed;
 	z-index: 100;
+    top: 0px;
 }
 
 nav .logo_space img{
@@ -464,6 +465,19 @@ section .mjx_products_container .container_p .info_cont .row .my_content{
 /*////////////////////////////////////////////(   Individual    )//////////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
+    .title_container{
+        position: relative;
+    }
+
+    .title_container a{
+        position: absolute;
+        right: 0px;
+    }
+
+    .title_container a i{
+        font-size: 30px;
+    }
+
     .product_indv_container{
         padding: 20px;
     }
@@ -519,6 +533,8 @@ section .mjx_products_container .container_p .info_cont .row .my_content{
         margin: 10px 10px 0 0;
     }
 
+
+
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////////////(   Individual - End    )///////////////////////////////////////////*/
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -555,6 +571,7 @@ section .mjx_products_container .container_p .info_cont .row .my_content{
 .cart_container .row_product_container .row_info{
     background-color: white;
     height: 100%;
+    border-radius: 0 10px 10px 0;
 }
 
 .cart_container .row_product_container .row_info h5{
@@ -583,10 +600,10 @@ section .mjx_products_container .container_p .info_cont .row .my_content{
 }
 
 .cart_container .row_product_container .row_plus{
-    background-color: red;
     height: 100%;
-    border-radius: 0 10px 10px 0;
+   
     text-align: center;
+    padding: 0;
 }
 
 .fixed-action-btn{
@@ -597,8 +614,10 @@ section .mjx_products_container .container_p .info_cont .row .my_content{
     height: 100%;
 }
 
-.btn_delete a{
-    margin-top: 30%;
+.btn_delete{
+    position: absolute;
+    bottom: 10px;
+    height: auto;
 }
 
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

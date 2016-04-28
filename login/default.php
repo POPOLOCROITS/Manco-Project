@@ -19,14 +19,20 @@
 					echo "Something went wrong :(";
 				}else{
 					$sql = 'SELECT user,passwd,id,cart FROM ajaxusers WHERE user="' . $_POST['username']. '" && passwd="' . md5($_POST['pass']) . '" LIMIT 1';
+
 					if ( @$res = @mysql_query($sql) ){
 						if ( @mysql_num_rows($res) == 1 ){
 							
 							$user = @mysql_fetch_array($res);
+
+							$register = 'SELECT * FROM cart WHERE id_user ='.$user['id'];
+							$result = mysql_query($register); 
+							$cart = mysql_num_rows($result);
 							
 							$_SESSION['username']	= $user['user'];
 							$_SESSION['userid']	= $user['id'];
-							$_SESSION['cart'] = $user['cart'];
+							$_SESSION['cart'] = $cart;
+
 							echo 1;
 							
 						}
@@ -52,11 +58,15 @@
 					if ( @$res = @mysql_query($sql) ){
 						if ( @mysql_num_rows($res) == 1 ){
 							
-							$user = @mysql_fetch_array($res);							
+							$user = @mysql_fetch_array($res);
+
+							$register = 'SELECT * FROM cart WHERE id_user ='.$user['id'];
+							$result = mysql_query($register); 
+							$cart = mysql_num_rows($result);							
 
 							$_SESSION['username']	= $user['user'];
 							$_SESSION['userid']	= $user['id'];
-							$_SESSION['cart'] = $user['cart'];						
+							$_SESSION['cart'] = $cart;						
 						}
 						else
 							echo "fourth 0";

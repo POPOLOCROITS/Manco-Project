@@ -3,6 +3,8 @@ $(window).load(function(){
 	// 	// $(this).remove();
 	// });
 
+    $("header").css({"margin-top":$("nav").height() + "px"});
+
 	var windowHeight        = $("#mjx3_banner").height() + 20,
         footerHeight        = $('footer').height(),
         heightDocument      = (windowHeight) + ($('.content').height()) + ($('footer').height());

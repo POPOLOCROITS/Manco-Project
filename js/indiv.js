@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var id = jQuery.geturl("product");
+	$(".product_indv_container").css({"margin-top":$("nav").height() + "px"})
 
 	$.ajax({
 		type:"POST",
@@ -53,6 +54,34 @@ $(document).ready(function(){
             $(".images_container").fadeIn();
         });                  
     },2000);
+
+    $(".add_product").on("click",function(){
+    	var id = jQuery.geturl("product");
+    	$.ajax({
+		type:"POST",
+		url:"../php/default.php",
+		data:{identification:8,id:id},
+		success:function(data){
+			var obj = jQuery.parseJSON(data);
+			console.log(obj.response);
+			if(obj.response == true){
+				Materialize.toast('Articulo añadido!', 4000);
+
+				console.log($(".mjx3_cart_counter").length);
+				
+				$(".mjx3_cart_counter").fadeIn(300);
+				console.log(obj);
+			}else{
+				Materialize.toast('Ya cuenta con este producto', 4000);
+				console.log(obj);
+			}
+		},
+		error:function(xhr, status, error){
+			var err = eval("(" + xhr.responseText + ")");
+ 			alert(err.Message);
+		}
+	});
+    });
 
 });	
 

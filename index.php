@@ -1,4 +1,18 @@
-<?php session_start(); ?>
+<?php 
+	session_start(); 
+
+	if($_SESSION){
+
+		mysql_connect("localhost", "root", "") or die("No se pudo conectar: " . mysql_error());
+		mysql_select_db("ajaxtests");
+		$register = 'SELECT * FROM cart WHERE id_user ='.$_SESSION['userid'];
+		$result = mysql_query($register); 
+		$cart = mysql_num_rows($result);
+
+		$_SESSION["cart"] = $cart;
+	}
+	
+?>
 
 <!DOCTYPE html>
 <html>
